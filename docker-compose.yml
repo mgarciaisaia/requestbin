@@ -1,22 +1,24 @@
-app:
-    build: .
-    environment:
-        REALM: prod
-        REDIS_URL: "//redis:6379"
-    links:
-        - redis
-    ports:
-        - "8000:8000"
+version: "2"
+services:
+    app:
+        build: .
+        environment:
+            REALM: prod
+            REDIS_URL: "//redis:6379"
+        links:
+            - redis
+        ports:
+            - "8000:8000"
 
-redis:
-    image: redis
+    redis:
+        image: redis
 
-ngrok:
-    image: wernight/ngrok
-    ports:
-        - 4040:4040
-    links:
-        - app
-    environment:
-        NGROK_PORT: 'app:8000'
-        NGROK_AUTH: '$NGROK_AUTH_TOKEN' # Get yours and export it on your shell
+    ngrok:
+        image: wernight/ngrok
+        ports:
+            - 4040:4040
+        links:
+            - app
+        environment:
+            NGROK_PORT: 'app:8000'
+            NGROK_AUTH: '$NGROK_AUTH_TOKEN' # Get yours and export it on your shell

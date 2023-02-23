@@ -1,3 +1,13 @@
+# requestbin
+
+This is a copy of the old runscope/requestbin project, which they have since deleted.
+
+Requestbin allows you to create URLs that you can send HTTP requests to, and it logs them for you to inspect them.
+
+This repo also includes ngrok in the `docker-compose.yml`, so you can easily expose your requestbin on the internet.
+
+-----
+
 # We have discontinued the publicly hosted version of RequestBin due to ongoing abuse that made it very difficult to keep the site up reliably. Please see instructions below for setting up your own self-hosted instance.
 
 Originally Created by [Jeff Lindsay](http://progrium.com)
